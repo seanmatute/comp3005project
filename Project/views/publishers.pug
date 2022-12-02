@@ -1,0 +1,36 @@
+html 
+    head 
+        title All Publishers
+
+body 
+    include header
+
+
+    div#main
+
+        if(user=='admin')
+
+            h3 All publishers (alphabetically)
+
+            each result in q 
+                p="Name: "+result.pname
+                p="Email: "+result.pemail 
+                p="Phone number: "+result.pphonenum
+
+                h5 Admin info: 
+                p="Publisher id: "+result.pid
+                p="Address: " + result.paddress
+                p="Bank account info: " + result.pbankaccount
+                br
+                br
+        else 
+            h3 All publishers (alphabetically)
+
+            each result in q 
+                p="Name: "+result.pname
+                p="Email: "+result.pemail 
+                p="Phone number: "+result.pphonenum
+                br
+
+
+        

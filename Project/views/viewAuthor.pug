@@ -1,0 +1,24 @@
+html 
+    head 
+        title View Author
+
+body 
+    include header
+
+
+    div#main
+
+        if(user)
+
+            h3="Books by " + q[0].author + ":"
+
+            each result in q 
+                a(href="/search/"+result.isbn)=result.title
+                br
+
+
+
+        if(!user)
+            h3 You must be logged in to view authors!
+
+        

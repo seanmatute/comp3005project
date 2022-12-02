@@ -1,0 +1,25 @@
+html 
+    head 
+        title All Orders
+
+body 
+    include header
+
+
+    div#main
+
+        if(user=='admin')
+
+            h3 All orders
+
+            each result in q 
+                p="Order number: " + result.ordernum
+                p=".   Individual puchase id: " + result.pid 
+                p=".   Book title: " + result.title
+                p=".   Bought by username: " + result.username 
+                p=".   Amount: $" + result.price
+                p=".   Total order amount for order " + result.ordernum + " : $" + result.amount
+        else 
+            h4 You must be an admin to view this page.
+
+        

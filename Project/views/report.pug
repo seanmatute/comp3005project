@@ -1,0 +1,39 @@
+html 
+    head 
+        title Reports
+
+body 
+    include header
+
+
+    div#main
+
+        if(user=='admin')
+
+            h3 Reports
+
+            h4 By ISBN
+            each result in byisbn
+                p=result.isbn + " | Total sales: $" + result.amount
+            br
+
+            h4 By Genre
+            each result in bygenre
+                p=result.genre + " | Total sales: $" + result.amount
+            br
+
+            h4 By Publisher
+            each result in bypublisher
+                p=result.publisher + " | Total sales: $" + result.amount
+            br
+
+            h4 By Author
+            each result in byauthor
+                p=result.author + " | Total sales: $" + result.amount
+
+
+            
+        else 
+            h4 You must be an admin to view this page.
+
+        

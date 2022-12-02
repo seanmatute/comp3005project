@@ -1,0 +1,24 @@
+html 
+    head 
+        title All Authors
+
+body 
+    include header
+
+
+    div#main
+
+        if(user)
+
+            h3 All authors (alphabetically)
+
+            each result in q 
+                a(href="/author/"+result.aid)=result.name
+                br
+
+
+
+        if(!user)
+            h3 You must be logged in to view authors!
+
+        

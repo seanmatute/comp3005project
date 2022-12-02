@@ -1,0 +1,44 @@
+html 
+    head 
+        title Search Books
+
+body 
+    include header
+
+
+    div#main
+
+        if(user)
+
+            h3 Search books by:
+            h5 Psst...the search is not case sensitive!
+            form(action="/search", method="post")
+                select#category(name="searchBy")
+                    option(name="all")="ALL"
+                    option(name="title")="Title"
+                    option(name="author")="Author"
+                    option(name="isbn")="ISBN"
+                    option(name="genre")="Genre"
+                    option(name="publisher")="Publisher"
+                    option(name="maxprice")="Max_Price"
+                    option(name="minprice")="Min_Price"
+                    option(name="maxpages")="Max_Pages"
+                    input(type="text", name="search")
+                button(type="submit") Search
+
+            br
+            br
+            if(queried)
+                h4 Result of search: 
+                br
+                if(q.length > 0)
+                    each result in q
+                        a(href='http://localhost:3000/search/'+result.isbn)= result.title + " by " + result.author
+                        br
+
+
+
+        if(!user)
+            h3 You must be logged in to view books!
+
+        

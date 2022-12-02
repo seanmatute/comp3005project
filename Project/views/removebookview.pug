@@ -1,0 +1,33 @@
+html 
+    head 
+        title REMOVE
+
+body 
+    include header
+
+
+    div#main
+
+        if(user=='admin')
+
+            h3 Remove books!
+
+            each result in q
+                h2=result.title
+                p="ISBN: " + result.isbn
+                p="Genre: " + result.genre
+                p="Page count: " + result.numpages
+                p="By: " + result.author
+                p="Book description: " + result.descrip
+                p="Price: $" + result.price
+                p="Stock: " + result.stock
+
+                form(action="/adminremove", method="post")
+                    input(type="text", name="isbn", value=result.isbn, hidden)
+                    button(type="submit") Delete book from store
+
+            
+        else 
+            h4 You must be an admin to view this page.
+
+        

@@ -1,0 +1,66 @@
+html 
+    head 
+        title Register
+
+body 
+    include header
+
+
+    div#main
+
+        if(user)
+            h3 You are already logged in! 
+    
+        if(!user)
+            h3 Register new user 
+            p="Please note at this time we only serve Canadian addresses."
+            form(action="/register", method="post")
+                p="First name: "
+                    input(type="text", name="fname")
+                    br
+                p="Last name: "
+                    input(type="text", name="lname")
+                    br
+                p="Username: "
+                    input(type="text", name="uname")
+                    br
+                p="Password: "
+                    input(type="text", name="pword")
+                    br
+                p="Email: "
+                    input(type="email", name="email")
+                    br
+                p="Phone number: "
+                    input(type="tel", name="pnum")
+                    br
+                p="Address: "
+                    input(type="text", name="add")
+                    br
+                p="City: "
+                    input(type="text", name="city")
+                    br
+                p="Postal code: "
+                    input(type="text", name="pcode")
+                    br
+
+                br
+                br
+            
+                h4 The following is optional and can be added later: 
+                h5 Credit card information 
+                p="Card Name"
+                    input(type="text", name="cname")
+                    br
+                p="Card number: "
+                    input(type="text", name="cnum")
+                    br
+                p="cvv: "
+                    input(type="text", name="cvv")
+                    br
+                p="Billing address: "
+                    input(type="text", name="badd")
+                    br
+                p="Billing city: "
+                    input(type="text", name="bcity")
+                    br
+                button(type="submit") Register new user!

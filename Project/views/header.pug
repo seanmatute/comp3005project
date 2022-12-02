@@ -1,0 +1,37 @@
+div#header
+    a(href="/") Home 
+    br
+    if(user)
+        p="Logged in as: " + user
+        a(href="/logout") Logout
+        h4 Links: 
+        a(href="/search") Search books
+        br
+        a(href="/authors") View all authors
+        br
+        a(href="/publishers") View all publishers
+        br
+        a(href="/cart") Cart
+        br
+
+        if(user=='admin')
+            h4 ADMIN TOOLS: 
+            a(href="/addbook") Add a new book
+            br
+            a(href="/removebook") Remove a book
+            br
+            a(href="/reports") View reports 
+            br
+
+        h5 ------------------------------
+
+
+
+
+    if(!user)
+        p="Not currenty logged in!"
+        a(href="/login") Login 
+        br
+        a(href="/register") or Create an account
+        br
+        h5 ------------------------------

@@ -1,0 +1,38 @@
+html 
+    head 
+        title View Book
+
+body 
+    include header
+
+
+    div#main
+
+        if(user)
+
+            h2=q[0].title
+            p="ISBN: " + q[0].isbn
+            p="Genre: " + q[0].genre
+            p="Page count: " + q[0].numpages
+            p="By: " + q[0].author
+            h4="Book description: " + q[0].descrip
+
+            br
+            h3="Price: $" + q[0].price
+            p="Stock: " + q[0].stock
+
+            if(q[0].stock>0)
+                form(action="/addToCart", method="post")
+                    input(type="text", name="isbn", value=q[0].isbn, hidden)
+                    button(type="submit") Add to cart
+
+            
+
+            p="This book was published by: " + q[0].publisher
+            a(href="/author/"+q[0].aid)="Click to view more by " + q[0].author
+
+
+        if(!user)
+            h3 You must be logged in to view books!
+
+        

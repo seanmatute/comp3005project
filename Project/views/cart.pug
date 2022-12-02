@@ -1,0 +1,68 @@
+html 
+    head 
+        title Cart
+
+body 
+    include header
+
+
+    div#main
+
+        if(user)
+
+            h3 Your cart
+
+            if(!empty)
+                each result in userCart
+                    p=result.title + " by " + result.author 
+                    p="Price: $" + result.price
+                    form(action="/removeFromCart", method="post")
+                        input(type="text", name="isbn", value=result.isbn, hidden)
+                        button(type="submit") Remove from cart
+                    br
+
+                //- p Which card would you like to use?
+                //- form()
+                //-     p="Card on file"
+                //-         input(type="radio", name="card")
+                //-     p="New card"
+                //-         input(type="radio", name="ncard")
+                //- p The following is the card info for the card on file (if any): 
+                //- if(userInfo)
+                //-     each result in userInfo 
+                //-         p=result.cardname 
+                //-         p=result.cardnum 
+
+                //- br
+                //- br
+                    
+                p Billing address must be same as shipping address to prevent fraud
+
+                form(action="/purchase", method="post")
+                    p="Card Name: "
+                        input(type="text", name="name", required)
+                        br
+                    p="Card Num: "
+                        input(type="number", name="num", required)
+                        br
+                    p="cvv: "
+                        input(type="number", name="cvv", required)
+                        br
+                    p="Billing Address: "
+                        input(type="text", name="address", required)
+                        br
+                    p="Billing City: "
+                        input(type="text", name="city", required)
+                        br
+                    button(type="submit") BUY NOW
+                br
+            
+            if(empty)
+                h4 Your cart is empty!
+
+
+
+        if(!user)
+            h3 You must be logged in to view your cart!
+
+        

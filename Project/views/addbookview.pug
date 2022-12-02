@@ -1,0 +1,77 @@
+html 
+    head 
+        title ADD
+
+body 
+    include header
+
+
+    div#main
+
+        if(user=='admin')
+
+            h3 Add new books! 
+
+            form(action="/adminadd", method="post")
+                    p="Book title "
+                        input(type="text", name="title", required)
+                        br
+                    p="ISBN "
+                        input(type="number", name="isbn", required)
+                        br
+                    p="Description "
+                        input(type="text", name="descrip", required)
+                        br
+                    p="Publisher "
+                        input(type="text", name="publisher", required)
+                        br
+                    p="Author "
+                        input(type="text", name="author", required)
+                        br
+                    p="Genre "
+                        input(type="text", name="genre", required)
+                        br
+                    p="Price "
+                        input(type="number", name="price", required)
+                        br
+                    p="Publisher percent (e.g. 0.20) "
+                        input(type="text", name="pubPercent", required)
+                        br
+                    p="Number of pages "
+                        input(type="number", name="numPages", required)
+                        br
+                    p="Initial stock "
+                        input(type="number", name="stock", required)
+                        br
+                    p ---
+                    p Enter ONLY the publisher id to use a known publisher, enter ALL details to make a new publisher
+                    p="Publisher id:  "
+                        input(type="number", name="pid", required)
+                        br
+                    p="Publisher address:  "
+                        input(type="text", name="paddress")
+                        br
+                    p="Publisher email:  "
+                        input(type="email", name="pemail")
+                        br
+                    p="Publisher phone number:  "
+                        input(type="tel", name="pphonenum")
+                        br
+                    p="Publisher bank account:  "
+                        input(type="number", name="pbankaccount")
+                        br
+                    p ---
+                    p Enter ONLY the author id to use a known author, enter ALL details to make a new author
+                    p="Author id:  "
+                        input(type="number", name="aid", required)
+                        br      
+                    p="Author country:  "
+                        input(type="text", name="acountry")
+                        br
+                    button(type="submit") Add book
+
+            
+        else 
+            h4 You must be an admin to view this page.
+
+        

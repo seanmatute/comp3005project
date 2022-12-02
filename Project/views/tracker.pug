@@ -1,0 +1,24 @@
+html 
+    head 
+        title Order Tracker
+
+body 
+    include header
+
+
+    div#main
+
+        h3 Order Confirmation 
+        h4="Order #" + q[0].ordernum
+
+        each result in q 
+            p="Bought by user: " + result.username 
+            p="Shipping to: " + result.shipping 
+            p="Puchase price: " + result.amount 
+
+            h3 ------
+
+            h4 Please keep this order number for your records and keep it private.
+            h4 You can view this website at anytime by going to /track/ORDERNUMBER
+
+            h3 Thanks for shopping with Look Inna Book!
