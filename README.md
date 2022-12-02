@@ -1,5 +1,6 @@
 # comp3005project
 COMP3005 - F22 -Final Project
+by: Sean Matute | 101189868
 
 To run program you must have the following installed on your computer:
 1. Node Package Manager
