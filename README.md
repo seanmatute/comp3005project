@@ -9,7 +9,7 @@ To run program you must have the following installed on your computer:
 To run the program:
 1. Download the entire respository to your local computer
   Can run from your terminal:
-    git clone https://github.com/johnbreton/COMP3005
+    git clone https://github.com/seanmatute/comp3005project
 2. Open a terminal to the folder and run: npm install
 3. In server.js (on line 436) change db = pgp('postgres://USERNAME:PASSWORD@localhost:5432/DB_NAME'); to your Postgres username, password and db name
 4. Initialize the database using the ddl.sql (and optional: the init.sql) in your own postgres PGAdmin.
