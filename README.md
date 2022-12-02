@@ -9,7 +9,7 @@ To run program you must have the following installed on your computer:
 To run the program:
 1. Download the entire respository to your local computer
 2. Open a terminal to the folder and run: npm install
-3. In server.js change db = pgp('postgres://USERNAME:PASSWORD@localhost:5432/DB_NAME'); to your Postgres username, password and db name
+3. In server.js (on line 436) change db = pgp('postgres://USERNAME:PASSWORD@localhost:5432/DB_NAME'); to your Postgres username, password and db name
 4. Initialize the database using the ddl.sql (and optional: the init.sql) in your own postgres PGAdmin.
 5. Start the server by running < node server.js > or < npm start > in the terminal
 6. Access the web application through http://localhost:3000/ 
